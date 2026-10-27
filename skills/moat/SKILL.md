@@ -3,7 +3,7 @@ name: moat
 description: "Run an AI-era moat audit of the SaaS business behind the current repo, using Rob Walling's and Einar Vollset's MicroConf Europe 2026 framework (10 AI attacks, 8 moats, the dashboard to compounding AI worker ladder and its five tests, and the Moats in the Age of AI Field Guide scorecard). Gathers evidence from the codebase and docs, circles the likeliest attacks, scores all 8 moats 0 to 10 with file-level evidence, places the product on the worker ladder, and writes a report with a score chart, an ordered build list, a skip list, founder decisions and a positioning-drift check. Use when the user says 'moat audit', '/moat', 'what are our moats', 'how defensible are we against AI', 'will AI kill this business', 'AI moat review', 'SaaSpocalypse', 'Rob Walling moats', 'AI worker ladder', or asks how an acquirer would judge the product's AI risk, even without naming the framework. Read-only. For a single pricing or positioning question, use a pricing or positioning skill instead."
 license: MIT
 metadata:
-  version: 1.1.0
+  version: 1.1.1
 ---
 
 # /moat: AI-era moat audit
@@ -33,11 +33,11 @@ Before any code, learn what the business is. Read whatever of these exists:
 
 Note:
 
-- What the product does, who buys it, who uses it daily, and any platform it sits on.
+- What the product does, who buys it, who uses it daily, and any platform it sits on (many standalone apps sit on none; say so).
 - Pricing model (per seat, per usage, flat tiers) and where most paying customers sit by price.
 - Customer count and stage, if recorded anywhere. If not, say unknown.
 - **Locked positioning promises** (taglines, "we never X", pricing promises). These constrain recommendations later.
-- **Who the reader is.** Write as "we" when the user owns or runs the business: they said so, or the docs name them as a founder, owner, CEO or the person who decides what ships and what it costs. The word "founder" does not have to appear. Write in the third person ("Acme's moats"), including the chart title and section headings, when the user is an outside reviewer, a contractor, an investor or a buyer, or when you cannot tell. If you cannot tell and the user is available, ask in the same question as the business context below.
+- **Who the reader is.** Write as "we" when the user owns or runs the business: they said so, or the docs name them as a founder, owner, CEO or the person who decides what ships and what it costs. The word "founder" does not have to appear. Write in the third person ("Acme's moats"), including the chart title and section headings, when the user is an outside reviewer, a contractor, an investor or a buyer, or when you cannot tell. If you cannot tell and the user is available, ask in the same question as the business context below. A frequent committer, contractor or security contact with no stated business role counts as "cannot tell"; write in the third person and say in one line near the top which reading you took.
 
 If the business is still unclear (no docs, a bare codebase), ask the user one short question before going on: what the product is and who pays for it. If the user is not available to answer, state your best reading of the business as an assumption at the top of the report and repeat it in one clause of the short answer.
 
@@ -46,12 +46,12 @@ If the business is still unclear (no docs, a bare codebase), ask the user one sh
 The framework is built for a live, paid SaaS. Decide which shape this is, say so near the top of the report, and apply the matching adjustments throughout. If two shapes fit, name both and apply both sets of adjustments.
 
 - **Live paid SaaS, self-serve:** the default; no adjustments.
-- **Live, sales-led or early** (customers sign up through demos, contracts or invoices; billing may live outside the product; a handful of accounts or an unknown count): score from what the code and docs show, not from the plan config, which in these apps is often template code nobody uses. Say the customer count is unknown if it is. Moats 6 and 7 rest on so few accounts that they score low by definition; say that once. Weight attack 5 (agencies and consultants building custom versions) and the sales-led price band.
-- **Pre-launch or dormant** (no prices, no customers, or no commits in many months): score what exists today, not what the plans promise, and put the potential in each moat's gap. Moats 1, 6 and 7 are near zero by definition without customers; say that once instead of arguing it eight times. Lead the build list with whatever must be true before anyone pays.
+- **Live, sales-led or early** (customers sign up through demos, contracts or invoices; billing may live outside the product; a handful of accounts or an unknown count): score from what the code and docs show, not from the plan config, which in these apps is often template code nobody uses. Say the customer count is unknown if it is. Moats 6 and 7 rest on so few accounts that they score low by definition; say that once. Weight attack 5 (agencies and consultants building custom versions). Pick the price band by the rule in `references/field-guide.md`, which goes by how customers pay; if staff set things up by hand after a self-serve payment, the purchase is still self-serve.
+- **Pre-launch or dormant** (no prices, no customers, or no commits in six months or more): score what exists today, not what the plans promise, and put the potential in each moat's gap. Moats 1, 6 and 7 are near zero by definition without customers; say that once instead of arguing it eight times. Lead the build list with whatever must be true before anyone pays.
 - **Open source or self-hosted:** score the project as it stands, and frame the build list around a paid offering it could have (hosting, support, a managed agent). The project is itself attack 3 for paid rivals. Test 4 of the five tests fails structurally unless outcomes flow back to a hosted service; say so rather than scoring it as a gap.
 - **No price at all:** no price band applies. Name the nearest band, label it as an assumption, and ask the 10x question against the price of the nearest paid substitute.
 
-Name the decision section for whoever decides: "Decisions for the founders", or "for the maintainers" on a community project.
+Name the decision section for whoever decides: "Decisions for the founders", "Decisions for <Business>'s founders" in a third-person report, or "for the maintainers" on a community project.
 
 ## Step 1: Gather evidence
 
@@ -61,7 +61,7 @@ Each pass names the moats it serves, collects concrete evidence (file paths, cou
 
 For a small repo (a few dozen source files), merge the passes into two or three; seven separate passes is overkill there.
 
-If a pass turns up a serious security or data-handling problem, record it. It goes in the report as a precondition (Step 5) because it undercuts moats 1 and 4 directly. Serious means a stranger or another customer could, today, read or change data that is not theirs, or move money: one account's data visible from another, an admin area or API with no login, an incoming webhook that acts without checking its signature, live secrets or real customer data committed to the repo (history included). Development-only keys, missing hardening and dependency advisories are not preconditions; mention them in one line under "Skip for now" or leave them out. Cite the file path only; never copy a secret or a customer's data into the report.
+If a pass turns up a serious security or data-handling problem, record it. It goes in the report as a precondition (Step 5) because it undercuts moats 1 and 4 directly. Serious means a stranger or another customer could, today, read or change data that is not theirs, or move money: one account's data visible from another, an admin area or API with no login, an incoming webhook that moves money, changes access or records something legally binding without checking its signature, live secrets or real customer data committed to the repo (history included). Development-only keys, missing hardening, dependency advisories and forgeable webhooks that only change a cosmetic status (an email marked bounced) are not preconditions; mention them in one line under "Skip for now" or leave them out. Cite the file path only; never copy a secret or a customer's data into the report.
 
 1. **Pricing and plans** (attacks 8, 9; price band): plan config, tier names and prices, per seat vs usage vs flat, limits, what is plan-gated. Which tier most customers are on, if any data or docs say.
 2. **Integrations and operations** (moat 8, attack 4): sync code, background jobs touching third parties (count them), retry and self-heal logic, rate limits, token refresh, documented API quirks, incident runbooks. Which platform or vendor the product depends on and what that platform already ships.
@@ -81,7 +81,7 @@ Weight attack 4 (platform) heavily for any extension, add-on or marketplace app;
 
 You may name likely competitors or open-source rivals from general knowledge for attacks 2 and 3; label them as unchecked, since the audit makes no web searches.
 
-Name the price band from the Field Guide and give its advice in a sentence (see Product shape when there is no price).
+Name the price band from the Field Guide and give its advice in a sentence. Convert annual or per-engagement prices to a monthly figure for the band (annual divided by 12) and show the conversion (see Product shape when there is no price).
 
 ## Step 3: Score the 8 moats
 
@@ -98,7 +98,7 @@ Then read off the Field Guide band (strong, middle, weak) and say which moat is 
 ## Step 4: Place the product on Einar's ladder
 
 - List the jobs the customer's staff do in or around the product. Place each on the ladder: 1 dashboard, 2 AI assistant, 3 AI worker, 4 compounding AI worker. An AI chat or insights feature is stage 2, not 3. Place a job by what reaches the customer: automation whose output nobody receives or acts on is not yet a worker.
-- Pick **one job** for the worker to take first: the product can take the action (or nearly), the outcome is observable in the product's own data, and any platform or vendor it sits on does not see that outcome. A payment or email vendor seeing a fragment (that a charge cleared, that an email opened) does not fail the third criterion; it fails when another product could rebuild the whole outcome from what it sees. If no job meets all three, pick the closest, name the criterion it fails, and make fixing that part of the build item.
+- Pick **one job** for the worker to take first: the product can take the action (or nearly), the outcome is observable in the product's own data, and any platform or vendor it sits on does not see that outcome. The outcome should show within weeks. If the job's real outcome arrives months or years later (a filing accepted, a loan repaid, a renewal), pick a job with a faster outcome, or use the earliest reliable signal of it and say which, and log the final outcome when it arrives. A payment or email vendor seeing a fragment (that a charge cleared, that an email opened) does not fail the third criterion; it fails when another product could rebuild the whole outcome from what it sees. If no job meets all three, pick the closest, name the criterion it fails, and make fixing that part of the build item.
 - Run the five tests on that job: pass, fail, or needs building, with a one-line reason each.
 - Describe stage 3 and stage 4 for that job concretely.
 - If test 2 or 3 fails, recommend logging outcomes now so real-world data accumulates before the worker ships.
@@ -116,7 +116,7 @@ Then read off the Field Guide band (strong, middle, weak) and say which moat is 
 
 ## Step 6: Positioning drift
 
-If the business has positioning, marketing, pricing or spec docs (a README's feature list counts), list every place they disagree with the live product or recent decisions you found in Steps 1 to 5 (recent commits, issues, notes). One table: topic, what the doc says, what is true now, where it shows (file path, issue, commit or date). If there is no drift or no such docs, say so in one line. Do not edit those docs yourself.
+If the business has positioning, marketing, pricing or spec docs (a README's feature list counts), list every place they disagree with the live product or recent decisions you found in Steps 1 to 5 (recent commits, issues, notes). One table: topic, what the doc says, what is true now, where it shows (file path, issue, commit or date). Include legal pages: where marketing promises something the terms of service or privacy policy contradict, list it here and also as a decision, since the founders choose which one changes. If there is no drift or no such docs, say so in one line. Do not edit those docs yourself.
 
 ## Step 7: Write the report
 

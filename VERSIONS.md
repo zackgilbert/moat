@@ -4,9 +4,20 @@ Current version of each skill. Agents can compare this against a local copy to c
 
 | Skill | Version | Last updated |
 |-------|---------|--------------|
-| moat | 1.1.0 | 2026-10-27 |
+| moat | 1.1.1 | 2026-10-27 |
 
 ## Changelog
+
+### 1.1.1 (2026-10-27)
+
+Fixes from a second test run, on an annual-priced app with slow outcomes:
+
+- A committer or security contact with no stated business role means third person, with the reading stated up top.
+- "Dormant" means no commits in six months or more.
+- Annual prices convert to monthly for the price band; the sales-led shape defers to the Field Guide's band rule.
+- The worker's first job needs an outcome that shows within weeks, or the earliest reliable signal of a slow one.
+- Webhook preconditions only when a forgery moves money, changes access or records something binding.
+- Third-person decision heading, standalone apps with no platform, and marketing that contradicts the legal pages.
 
 ### 1.1.0 (2026-10-27)
 
