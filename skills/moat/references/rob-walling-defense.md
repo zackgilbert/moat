@@ -1,6 +1,6 @@
 # Rob Walling: Defense (10 attacks, 8 moats)
 
-Source: Rob Walling, MicroConf Europe 2026 (Iceland) talk, co-written with Einar Vollset after Einar spent about a month working through 89 papers from think tanks, PE groups and Gartner. Companion: the Field Guide PDF (https://microconf.com/moats) and Startups for the Rest of Us episodes 836 and 855.
+Source: Rob Walling, MicroConf Europe 2026 (Iceland) talk, co-written with Einar Vollset after Einar spent about a month working through 89 papers from think tanks, PE groups and Gartner. The talk video, slides and the Field Guide PDF are at https://microconf.com/moats. See also Startups for the Rest of Us episodes 836 and 855.
 
 These are summary notes with short attributed quotes, written for applying the framework in an audit. The framework, examples and quoted material belong to Rob Walling and Einar Vollset. For the full argument, watch the talk or listen to the episodes.
 

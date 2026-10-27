@@ -1,6 +1,6 @@
 # Einar Vollset: Offense ("How to Unfuck Your SaaS")
 
-Source: Einar Vollset (Discretion Capital, TinySeed), MicroConf Europe 2026, given a couple of hours after Rob's defense talk. Subtitle: "Or, the greatest opportunity this century." Slides and recording are available through MicroConf; the Field Guide (https://microconf.com/moats) covers the same offense moves in short form.
+Source: Einar Vollset (Discretion Capital, TinySeed), MicroConf Europe 2026, given a couple of hours after Rob's defense talk. Subtitle: "Or, the greatest opportunity this century." The talk video and slides are at https://microconf.com/moats, with the Field Guide, which covers the same offense moves in short form.
 
 These are summary notes with short attributed quotes, written for applying the framework in an audit. The framework and quoted material belong to Einar Vollset and Rob Walling.
 

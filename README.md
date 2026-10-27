@@ -6,6 +6,8 @@ Point it at your product's repo and run `/moat`. It reads your code and docs, ci
 
 The framework comes from Rob Walling and Einar Vollset (see [Credit](#credit)). This skill is an unofficial companion that applies it to a codebase.
 
+**This is not endorsed by or affiliated with Rob Walling, Einar Vollset, or MicroConf.** It is my own project. For the original material, go to [microconf.com/moats](https://microconf.com/moats).
+
 ## What you get
 
 A markdown report at `docs/moat-audit-YYYY-MM-DD.md` with these sections:
@@ -100,12 +102,13 @@ If your agent has a first-party docs connector (such as Claude Docs) and you ask
 
 The framework belongs to **Rob Walling** and **Einar Vollset**. Everything this skill knows about attacks, moats, the worker ladder and the five tests comes from their work:
 
-- Rob Walling's talk on defense (the 10 attacks and 8 moats) and Einar Vollset's talk "How to Unfuck Your SaaS" (offense, the worker ladder), both at MicroConf Europe 2026.
-- The "Moats in the Age of AI" Field Guide: [microconf.com/moats](https://microconf.com/moats)
+- The talk videos, slides and the "Moats in the Age of AI" Field Guide: [microconf.com/moats](https://microconf.com/moats). This is the place to start.
+- Rob Walling's talk on defense (the 10 attacks and 8 moats) and Einar Vollset's talk "How to Unfuck Your SaaS" (offense, the worker ladder), both at MicroConf Europe 2026. Watch both at [microconf.com/moats](https://microconf.com/moats).
+- More MicroConf talks: [YouTube](https://www.youtube.com/@microconf) and [microconf.com/videos](https://microconf.com/videos)
 - Startups for the Rest of Us episode 855, [The Eight SaaS Moats that Still Work in the Age of AI](https://www.startupsfortherestofus.com/episodes/episode-855-the-eight-saas-moats-that-still-work-in-the-age-of-ai)
 - Startups for the Rest of Us episode 836, [The 5 A.I. Moats Acquirers Value Most](https://www.startupsfortherestofus.com/episodes/episode-836-the-5-a-i-moats-acquirers-value-most)
 
-This is an unofficial companion. It is not made, reviewed or endorsed by Rob, Einar, MicroConf, TinySeed or Discretion Capital. The reference files hold summary notes and short attributed quotes; for the full argument, read the Field Guide and listen to the episodes.
+This is not endorsed by or affiliated with Rob Walling, Einar Vollset, or MicroConf (or TinySeed or Discretion Capital). It is my own project, shared with their permission. The reference files hold summary notes and short attributed quotes; for the full argument, watch the talks, read the Field Guide and listen to the episodes.
 
 ## Contributing
 
