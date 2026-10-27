@@ -4,9 +4,16 @@ Current version of each skill. Agents can compare this against a local copy to c
 
 | Skill | Version | Last updated |
 |-------|---------|--------------|
-| moat | 1.1.1 | 2026-10-27 |
+| moat | 1.2.0 | 2026-10-27 |
 
 ## Changelog
+
+### 1.2.0 (2026-10-27)
+
+- Reports name moats and attacks ("Someone official said yes") instead of numbering them; numbers stay only as chart and table labels. The worked example follows the same rule.
+- Self-serve products with only a few dozen accounts score the network and learning moats low, and say why once.
+- A business on the line between two bands gets the lower band, both named, and what would move it up.
+- Ties in the moat table go to the stronger evidence first.
 
 ### 1.1.1 (2026-10-27)
 

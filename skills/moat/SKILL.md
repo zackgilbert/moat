@@ -3,7 +3,7 @@ name: moat
 description: "Run an AI-era moat audit of the SaaS business behind the current repo, using Rob Walling's and Einar Vollset's MicroConf Europe 2026 framework (10 AI attacks, 8 moats, the dashboard to compounding AI worker ladder and its five tests, and the Moats in the Age of AI Field Guide scorecard). Gathers evidence from the codebase and docs, circles the likeliest attacks, scores all 8 moats 0 to 10 with file-level evidence, places the product on the worker ladder, and writes a report with a score chart, an ordered build list, a skip list, founder decisions and a positioning-drift check. Use when the user says 'moat audit', '/moat', 'what are our moats', 'how defensible are we against AI', 'will AI kill this business', 'AI moat review', 'SaaSpocalypse', 'Rob Walling moats', 'AI worker ladder', or asks how an acquirer would judge the product's AI risk, even without naming the framework. Read-only. For a single pricing or positioning question, use a pricing or positioning skill instead."
 license: MIT
 metadata:
-  version: 1.1.1
+  version: 1.2.0
 ---
 
 # /moat: AI-era moat audit
@@ -45,7 +45,7 @@ If the business is still unclear (no docs, a bare codebase), ask the user one sh
 
 The framework is built for a live, paid SaaS. Decide which shape this is, say so near the top of the report, and apply the matching adjustments throughout. If two shapes fit, name both and apply both sets of adjustments.
 
-- **Live paid SaaS, self-serve:** the default; no adjustments.
+- **Live paid SaaS, self-serve:** the default. If it has only a few dozen paying accounts or fewer, "Everyone's already in it" and "Every customer makes us smarter" rest on too little data to score above low; say that once.
 - **Live, sales-led or early** (customers sign up through demos, contracts or invoices; billing may live outside the product; a handful of accounts or an unknown count): score from what the code and docs show, not from the plan config, which in these apps is often template code nobody uses. Say the customer count is unknown if it is. Moats 6 and 7 rest on so few accounts that they score low by definition; say that once. Weight attack 5 (agencies and consultants building custom versions). Pick the price band by the rule in `references/field-guide.md`, which goes by how customers pay; if staff set things up by hand after a self-serve payment, the purchase is still self-serve.
 - **Pre-launch or dormant** (no prices, no customers, or no commits in six months or more): score what exists today, not what the plans promise, and put the potential in each moat's gap. Moats 1, 6 and 7 are near zero by definition without customers; say that once instead of arguing it eight times. Lead the build list with whatever must be true before anyone pays.
 - **Open source or self-hosted:** score the project as it stands, and frame the build list around a paid offering it could have (hosting, support, a managed agent). The project is itself attack 3 for paid rivals. Test 4 of the five tests fails structurally unless outcomes flow back to a hosted service; say so rather than scoring it as a gap.
@@ -93,7 +93,7 @@ Score each 0 to 10 using the calibration in `references/field-guide.md`. For eac
 
 Score honestly and conservatively. A program that exists on paper but has never paid out, an approval every competitor also holds, or a strength customers cannot see should score low to middling. A 9 or 10 is almost never right for a small SaaS. Say in the report that scores are a rough first read meant to be argued with.
 
-Then read off the Field Guide band (strong, middle, weak) and say which moat is closest to becoming strong. The guide's bands are qualitative; if you use the numeric working rule from `references/field-guide.md`, label it as the skill's rule, not the guide's.
+Then read off the Field Guide band (strong, middle, weak) and say which moat is closest to becoming strong. If the business sits on the line between two bands, say both ("weak, on the line with middle"), give the lower one as the band, and name what would move it up. The guide's bands are qualitative; if you use the numeric working rule from `references/field-guide.md`, label it as the skill's rule, not the guide's.
 
 ## Step 4: Place the product on Einar's ladder
 
@@ -145,7 +145,7 @@ Title the report "<Business> Moats in the Age of AI" with the date under it. Sec
 1. **Short answer:** 2 or 3 sentences: how many strong, partial and near-zero moats, the biggest risks, and the band with the moat closest to strong. If you placed the band with the skill's numeric rule, say "(using this skill's working rule, not the guide's)" once, here.
 2. **The framework:** a compact recap for readers who have not seen the talks, modeled on the one in `references/example-audit.md`: the 10 attacks (supply 1 to 6, demand 7 to 10), the dried-up moats, the 8 moats with gut checks (table), Einar's three options, the ladder and five tests, and his two spoken points (the many-AI-receptionists problem; two-track SEO). Keep it short.
 3. **Where AI hits us:** circled attacks, where we're safe, price-band advice.
-4. **Our moats today:** the chart, then a table of moat, score, what we have, the gap, sorted by score.
+4. **Our moats today:** the chart, then a table of moat, score, what we have, the gap, sorted by score (ties: stronger evidence first).
 5. **What to build, in order:** preconditions first if any, then the build list, with the ladder placement and five-test results inside the worker item.
 6. **Skip for now.**
 7. **Decisions for the founders** (or maintainers; as a checklist).
@@ -157,6 +157,8 @@ Headings above use "we" and "our"; switch them to the business's name when writi
 End your chat reply with one line and the report path or link. Findings live in the report, not the chat.
 
 ## House style for the report
+
+- **Names, not numbers.** Refer to every moat and attack by its name ("Someone official said yes", "a platform ships your feature"), in the report and in the chat reply. Readers do not know the numbering. A number may appear only as a label next to the name in the score chart or a table.
 
 - No em dashes. Use commas, colons, semicolons, parentheses or separate sentences.
 - No pipes as text separators (markdown table syntax is fine).

@@ -1,7 +1,7 @@
 {
   "name": "moat",
   "description": "An AI-era moat audit for SaaS founders, based on Rob Walling's and Einar Vollset's MicroConf Europe 2026 framework: 10 AI attacks, 8 moats, the AI worker ladder and five tests",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "author": {
     "name": "Zack Gilbert",
     "url": "https://github.com/zackgilbert"

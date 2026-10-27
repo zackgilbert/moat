@@ -86,19 +86,19 @@ How the scores were held down: the SMS registration scored 5, not higher, becaus
 
 ## What to build, in order
 
-1. **Become the worker on one job: filling cancelled slots (ladder; moats 3 and 7; answers attack 9).**
+1. **Become the worker on one job: filling cancelled slots (ladder; strengthens "allowed to act" and "every customer makes us smarter"; answers "your user's job goes away").**
    - Today's ladder: calendar and no-show report are stage 1; the "suggest a reply" button for patient messages is stage 2. Nothing is at stage 3.
    - Proposed job: when a patient cancels, offer the slot to the waitlist and to patients overdue for a follow-up, by SMS, and book whoever accepts first. Stage 3 does this with fixed rules. Stage 4 learns across clinics which offers (time of day, notice period, message wording) fill which kinds of slots.
    - Five tests: 1 takes the action, needs building (we send SMS but do not book from a reply). 2 sees the outcome, pass (the booking lands in our own data). 3 outcome changes the next action, needs building. 4 helps other clinics, needs building. 5 learning stays with us, pass (Framewise never sees bookings or replies).
    - Start logging now: for every reminder and offer sent, record what was sent and what happened (booked, ignored, cancelled), so real-world data builds before the worker ships.
    - 10x question: at $59/month, what would a clinic happily pay $590/month for? Plausibly a front desk that keeps the calendar full without a receptionist.
-2. **Make "nobody checks our work" true (moats 4 and 8).**
+2. **Make "nobody checks our work" true (strengthens "nobody checks our work" and "hard to keep running").**
    - Fix #212 and add a daily reconciliation that confirms every reminder went out at the right local time.
    - Show each clinic a monthly line: "every reminder delivered on time, zero double bookings."
-3. **Deepen the system of record (moat 2; answers attack 4).**
+3. **Deepen the system of record (strengthens "system of record"; answers "a platform ships your feature").**
    - Add outbound webhooks and a clinic-facing export so their notes and payment tools read from us.
    - Treatment plans (a series of visits) are a natural next record that only we would hold.
-4. **Welcome the agents (Einar's second option; answers attack 9).**
+4. **Welcome the agents (Einar's second option; answers "your user's job goes away").**
    - A small API or MCP server so a clinic's AI receptionist books through Kettlebook instead of replacing it. Gate it to Group.
    - Run the unnamed-agent test: ask an assistant "how do I take physio bookings on my Framewise site with text reminders?" and see whether it names us.
    - Make public booking pages agent-readable (structured data for services, practitioners and open times). Two-track SEO: humans find us in the Framewise marketplace; agents need to find us too.
@@ -112,7 +112,7 @@ How the scores were held down: the SMS registration scored 5, not higher, becaus
 ## Decisions for the founders
 
 - [ ] **How to price the worker.** The obvious outcome price (a fee per refilled slot) breaks the promise "Never a fee per booking." Options: a premium flat tier (fits the promise), a per-practitioner add-on, or rewording the promise. Raised as a decision, not resolved.
-- [ ] **Stay on Framewise only, or add a second website builder.** A second platform halves attack 4's damage but doubles the operating load that moat 8 rests on.
+- [ ] **Stay on Framewise only, or add a second website builder.** A second platform halves the damage if a platform ships our feature but doubles the operating load that moat 8 rests on.
 - [ ] **Which job the worker takes first.** Filling cancellations is proposed; intake-form chasing and no-show follow-up are smaller starts.
 - [ ] **Partner with AI receptionist vendors or compete with them.** Partnering means the API in build item 4; competing means building voice.
 
