@@ -65,7 +65,7 @@ If pricing is per seat: model what happens when the top 10 customers halve the r
 - **Sales-led, mid-market:** strengthen champions and the system-of-record position, watch for agencies pitching custom builds to the biggest accounts, and pilot one outcome-based workflow with a few trusted customers.
 - **Planning to sell in 6 to 18 months:** buyers want moats backed by evidence, an honest view of exposure, an agentic roadmap, and pricing that holds up.
 
-Pick the band from the plan config: if most paying customers are on tiers under $100/month, use the self-serve advice even when a top tier costs more.
+Pick the band by how customers buy, then by price. If customers sign up and pay without talking to anyone, and most pay under $100/month, use the self-serve advice even when a top tier costs more. If customers come through demos, contracts or invoices, use the sales-led advice whatever the per-seat price is, and add the self-serve warning about attacks 1, 2 and 6 when a whole account pays under $100/month. If you cannot tell how customers buy, name the band you chose and why in one sentence.
 
 ## Scorecard method
 
