@@ -1,0 +1,18 @@
+{
+  "name": "moat",
+  "owner": {
+    "name": "Zack Gilbert",
+    "url": "https://github.com/zackgilbert"
+  },
+  "metadata": {
+    "description": "An AI-era moat audit skill for SaaS founders",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "moat",
+      "description": "Audit how defensible a SaaS business is against AI, using Rob Walling's and Einar Vollset's MicroConf Europe 2026 framework, and get a scored report with a build list",
+      "source": "./"
+    }
+  ]
+}
