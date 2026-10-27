@@ -4,7 +4,6 @@ Kettlebook is a made-up business. Every name, number and file path below is inve
 
 Business context gathered in Step 0: Kettlebook is an online booking and reminders add-on for small physiotherapy, massage and chiropractic clinics. It installs as an app on Framewise, a (fictional) website builder with an app marketplace, and embeds a booking widget on the clinic's Framewise site. Two founders, no employees. About 150 paying clinics, per the founders' notes. Tiers: Solo $29/month (1 practitioner), Clinic $59/month (up to 5), Group $99/month (up to 15); most clinics are on Clinic. Locked positioning, from `docs/positioning.md`: "One flat price. Never a fee per booking."
 
----
 
 # Kettlebook Moats in the Age of AI
 
