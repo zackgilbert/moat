@@ -8,6 +8,14 @@ The framework comes from Rob Walling and Einar Vollset (see [Credit](#credit)). 
 
 **This is not endorsed by or affiliated with Rob Walling, Einar Vollset, or MicroConf.** It is my own project. For the original material, go to [microconf.com/moats](https://microconf.com/moats).
 
+## How this came about
+
+I'm a co-founder of [Eventually](https://eventuallyticketing.com), an official Squarespace Extension for event ticketing. After Rob and Einar's talks at MicroConf Europe 2026, I wanted to know how our own business held up against AI. So I wrote this skill and ran its first audit on Eventually's codebase at [eventuallyticketing.com](https://eventuallyticketing.com).
+
+That first audit turned into real work within the week. We started logging what happens after each action, so a future AI worker has outcomes to learn from. We added an alert for when a store's order webhooks go quiet. We published an `llms.txt` so AI agents can read what the product does. And we picked our first AI worker job: offering freed seats to the people on an event's waitlist, automatically.
+
+I then ran the skill on two other apps, one of them sales-led, and fixed what those runs showed (see [VERSIONS.md](VERSIONS.md)). The worked example below is a made-up company, so no real business's private details live in this repo.
+
 ## What you get
 
 A markdown report at `docs/moat-audit-YYYY-MM-DD.md` with these sections:
